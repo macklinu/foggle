@@ -1,6 +1,7 @@
 require "foggle/toggle"
 
 module Foggle
+  # @!visibility private
   class Railtie < Rails::Railtie
     initializer "foggle" do
       ActiveSupport.on_load :action_controller do

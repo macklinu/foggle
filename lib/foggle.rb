@@ -1,5 +1,6 @@
 require "foggle/version"
 
+# Environment-based feature toggles in Rails
 module Foggle
 end
 

@@ -25,7 +25,7 @@ Or install it yourself as:
 
 Add a feature toggle to the environment. The naming convention is `FEATURE_{{NAME}}`, where `{{NAME}}` is the feature name you're working on.
 
-Let's say you're working on _cool stuff_. :sunglasses:
+Let's say you're working on __cool stuff__. :sunglasses:
 
 ```
 # add to the environment
@@ -72,7 +72,7 @@ Totes.
 
 ### Editing
 
-```
+```sh
 # install dependencies
 $ bin/setup
 
@@ -82,16 +82,17 @@ $ bundle exec rake spec
 
 ### Installation
 
-```
-# install foggle locally
-$ bundle exec rake install
+Install Foggle locally
 
-# release new version
-# bump `version.rb`
+```sh
+$ bundle exec rake install
+```
+
+Deploy Foggle
+
+```sh
+# bump `foggle/version`
 $ bundle exec rake release
-# tags release
-# pushes to GitHub
-# pushes .gem file to RubyGems
 ```
 
 ## Make it.
