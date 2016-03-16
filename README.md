@@ -1,6 +1,7 @@
 # Foggle
 
 [![Build Status](https://travis-ci.org/macklinu/foggle.svg?branch=master)](https://travis-ci.org/macklinu/foggle)
+[![Codecov](https://img.shields.io/codecov/c/github/macklinu/foggle.svg)](https://codecov.io/github/macklinu/foggle?branch=master)
 [![Sponsor](https://img.shields.io/badge/Sponsor-Detroit%20Labs-000000.svg)](http://www.detroitlabs.com)
 
 > Environment-based feature toggles for Rails
