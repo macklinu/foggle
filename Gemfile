@@ -1,4 +1,12 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-# Specify your gem's dependencies in foggle.gemspec
+group :development do
+  gem "yard"
+  gem "rubocop", require: false
+end
+
+group :test do
+  gem "rspec"
+end
+
 gemspec

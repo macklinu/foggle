@@ -1,5 +1,8 @@
 # Foggle
 
+[![Build Status](https://travis-ci.org/macklinu/foggle.svg?branch=master)](https://travis-ci.org/macklinu/foggle)
+[![Sponsor](https://img.shields.io/badge/Sponsor-Detroit%20Labs-000000.svg)](http://www.detroitlabs.com)
+
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/foggle`. To experiment with that code, run `bin/console` for an interactive prompt.
 
 TODO: Delete this and the text above, and describe your gem
