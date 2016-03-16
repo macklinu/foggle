@@ -3,16 +3,14 @@
 [![Build Status](https://travis-ci.org/macklinu/foggle.svg?branch=master)](https://travis-ci.org/macklinu/foggle)
 [![Sponsor](https://img.shields.io/badge/Sponsor-Detroit%20Labs-000000.svg)](http://www.detroitlabs.com)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/foggle`. To experiment with that code, run `bin/console` for an interactive prompt.
+> Environment-based feature toggles for Rails
 
-TODO: Delete this and the text above, and describe your gem
+## Get it.
 
-## Installation
-
-Add this line to your application's Gemfile:
+Add this line to your application's `Gemfile`:
 
 ```ruby
-gem 'foggle'
+gem "foggle"
 ```
 
 And then execute:
@@ -23,22 +21,83 @@ Or install it yourself as:
 
     $ gem install foggle
 
-## Usage
+## Do it.
 
-TODO: Write usage instructions here
+Add a feature toggle to the environment. The naming convention is `FEATURE_{{NAME}}`, where `{{NAME}}` is the feature name you're working on.
 
-## Development
+Let's say you're working on _cool stuff_. :sunglasses:
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+```
+# add to the environment
+FEATURE_COOL_STUFF=true
+```
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+In your views and controllers, you have access to the method that rules them all: `enabled?`.
 
-## Contributing
+```erb
+<% if enabled? :cool_stuff %>
+  <%= render "cool_stuff" %>
+<% end %>
+```
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/foggle. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+This method just reads in the environment variable you've set. Returns `true` or `false`.
 
+There are a couple ways to use `foggle`, depending on your preference.
+
+`feature?` is an alias for `enabled?`.
+
+```ruby
+enabled? :cool_stuff
+feature? :cool_stuff
+```
+
+These methods also take strings.
+
+```ruby
+enabled? "cool_stuff"
+enabled? "COOL_STUFF"
+```
+
+Passing in a Symbol version of your feature name is recommended, only because it looks cool and Ruby-esque. Do you.
+
+## Why?
+
+The team at [Current](https://www.hirecurrent.com) wanted a simple feature toggle system without having to integrate a larger feature toggle system into the codebase. Since we are already deploying to Heroku and could quickly modify environment variables across our environments, we thought we'd try this out.
+
+## Cool.
+
+Totes.
+
+## Hack it.
+
+### Editing
+
+```
+# install dependencies
+$ bin/setup
+
+# run Rubocop and tests
+$ bundle exec rake spec
+```
+
+### Installation
+
+```
+# install foggle locally
+$ bundle exec rake install
+
+# release new version
+# bump `version.rb`
+$ bundle exec rake release
+# tags release
+# pushes to GitHub
+# pushes .gem file to RubyGems
+```
+
+## Make it.
+
+Bug reports? Ideas? [Bring 'em](https://github.com/macklinu/foggle/issues). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
+[MIT](http://opensource.org/licenses/MIT)
